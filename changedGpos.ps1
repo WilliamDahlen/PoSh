@@ -11,7 +11,7 @@ Script changes in gpos the last 24 hours.
 #---Variables---#
 $eventLogExist = Get-EventLog -LogName Application -Source "changedGpos" | where {$_.EventID -eq 690}
 $numberOfDaysBack = -1
-$checkdate = (Get-Date).AddDays($AntallDagerTilbake)
+$checkdate = (Get-Date).AddDays($numbersOfDaysBack)
 $domain1 = 'contoso.microsoft.com'
 $domain2 = 'adatum.microsoft.com'
 $changedGpoDomain1 = Get-GPO -all -Domain $domain1 -Verbose | Where-Object {$_.ModificationTime -gt $checkdate} #This is searching for all GPOS defined for that domain.
